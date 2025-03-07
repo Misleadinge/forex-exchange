@@ -16,13 +16,15 @@ A Spring Boot application that provides foreign exchange rate services and curre
 ## Tech Stack
 - Java 21
 - Spring Boot 3.2.3
-- Spring Cloud OpenFeign
+- Spring OpenFeign
 - H2 Database
 - Swagger/OpenAPI
 - JUnit 5 & Mockito
 - Maven
 - Docker
-- 
+- Lombok
+- Spring Data JPA
+- Spring Boot Devtools
 
 ## API Endpoints
 - `GET /api/v1/forex/rate` - Get exchange rate between two currencies
