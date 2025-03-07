@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  forex-service:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - FOREX_API_KEY=13c496f66e50f99e80b7dd0207702eca
+      - FOREX_API_URL=http://api.currencylayer.com
+      - SPRING_H2_CONSOLE_SETTINGS_WEB-ALLOW-OTHERS=true
+      - SPRING_H2_CONSOLE_ENABLED=true
+    networks:
+      - forex-network
+
+networks:
+  forex-network:
+    driver: bridge 
