@@ -1,6 +1,5 @@
 # Forex Exchange Service
 
-**Author:** OpenPayd Technical Assessment  
 **Date:** 07.03.2025
 
 ## Overview
