@@ -22,6 +22,7 @@ A Spring Boot application that provides foreign exchange rate services and curre
 - JUnit 5 & Mockito
 - Maven
 - Docker
+- 
 
 ## API Endpoints
 - `GET /api/v1/forex/rate` - Get exchange rate between two currencies
@@ -66,11 +67,18 @@ Run tests using:
 Key application properties:
 ```properties
 # Exchange Rate API Configuration
-forex.api.key=[your-api-key]
+forex.api.key=[api-key]
 forex.api.url=http://api.currencylayer.com
 
 # Database Configuration
 spring.datasource.url=jdbc:h2:mem:forexdb
+```
+```properties
+# Caching Configuration
+cacheManager.setCaffeine(Caffeine.newBuilder()
+                .maximumSize(100) # This can be altered to change aximum array size
+                .expireAfterWrite(1, TimeUnit.MINUTES) # This can be altered to change cache clean-up time
+                .recordStats());
 ```
 
 
