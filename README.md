@@ -1,0 +1,76 @@
+# Forex Exchange Service
+
+**Author:** OpenPayd Technical Assessment  
+**Date:** 07.03.2025
+
+## Overview
+A Spring Boot application that provides foreign exchange rate services and currency conversion operations.
+
+## Features
+- Real-time exchange rate retrieval
+- Currency conversion with transaction history
+- RESTful API with Swagger documentation
+- In-memory H2 database for transaction storage
+- Caching support using Caffeine
+
+## Tech Stack
+- Java 21
+- Spring Boot 3.2.3
+- Spring Cloud OpenFeign
+- H2 Database
+- Swagger/OpenAPI
+- JUnit 5 & Mockito
+- Maven
+- Docker
+
+## API Endpoints
+- `GET /api/v1/forex/rate` - Get exchange rate between two currencies
+- `POST /api/v1/forex/convert` - Convert amount between currencies
+- `GET /api/v1/forex/history` - Retrieve conversion history
+
+## Getting Started
+
+### Prerequisites
+- Java 21
+- Maven 3.6+
+- Docker (optional)
+
+### Running Locally
+```bash
+# Clone the repository
+git clone [repository-url]
+
+# Build the project
+./mvnw clean package
+
+# Run the application
+./mvnw spring-boot:run
+```
+
+### Running with Docker
+```bash
+# Build and run with Docker Compose
+docker-compose up --build
+```
+
+## API Documentation
+Access Swagger UI at: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
+## Testing
+Run tests using:
+```bash
+./mvnw test
+```
+
+## Configuration
+Key application properties:
+```properties
+# Exchange Rate API Configuration
+forex.api.key=[your-api-key]
+forex.api.url=http://api.currencylayer.com
+
+# Database Configuration
+spring.datasource.url=jdbc:h2:mem:forexdb
+```
+
+
